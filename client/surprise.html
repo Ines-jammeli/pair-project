@@ -7,9 +7,19 @@
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <link rel="shortcut icon" type="image/x-icon" href="shaun.ico">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
+    <link rel="stylesheet" href="client.css">
 
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+ 
+}
+
+body { 
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfYhQkhJzSsbR1ZnEhBtp-v-spNK35_SBU0Q&usqp=CAU");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .coupon {
   border: 5px dotted #bbb;
@@ -24,16 +34,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
   background-color: #f1f1f1;
 }
 
-.promo {
-  background: #ccc;
-  padding: 3px;
+#myBtn { 
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  width: 250px; 
+  border-radius: 30px;
+  font-size: 20px;
+  
 }
 
-.expire {
-  color: red;
-}
-
-
+#myBtn:active {
+  background-color: #e9b744 ;
+  box-shadow: 0 5px#99700f;
+  transform: translateY(4px);
+} 
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -45,8 +58,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: #596a71 ; /* Fallback color */
+  background-color:#596a71 ; /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -92,17 +105,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: #e9b744 ;
+  color: #905b4c ;
 }
 
 .modal-body {padding: 2px 16px;}
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: #e9b744 ;
+  color: #905b4c  ;
 }
+
+
+.gift { 
+  text-align: center }  
+
 </style>
 </head>
 <body>
@@ -117,11 +135,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div class="container">
     <h3><b>Fatourti: </b> 3ayed m3ana b arfa9 l aswem</h3>
   </div>
-  <img src="https://thumbs.dreamstime.com/b/petit-animal-de-sourire-dr%C3%B4le-mignon-clipart-image[…]-b%C3%A9b%C3%A9-moutons-illustration-vecteur-154203528.jpg" alt="3allouchi" style="width:100%;">
+  <img src=https://mahdyibnsalah.fr/images/mouton.jpg alt="3allouchi" style="width:100%;">
   <div class="container" style="background-color:white">
 <div class="col-25">
     <div class="container1">
-      <h4>My Bill Details <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+      <h4>My Bill Details <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> </span></h4>
       <script type="text/javascript">
       $(".container1").append("<p><a>3allouch Price</a> <span class=\"price\"> "+chosenAllouch.price +' TND </span></p>') 
      if (localStorage.Garbet==="true"){
@@ -162,10 +180,11 @@ var surpriseSource=supriseArray[surpriseNumber];
 
 
 
-<h2>A5tar kadouk</h2>
+<div class = 'gift'>
+<h2> A5tar kadouk </h2>
 
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Chouf Zahrek</button>
+<button id="myBtn"> Chouf Zahrek click me! </button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
@@ -174,7 +193,7 @@ var surpriseSource=supriseArray[surpriseNumber];
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Rba7t M3ana</h2>
+      <h2>Tadaaa! .. </h2>
     </div>
     <div class="modal-body" id="modal-body">
      <script type="text/javascript">

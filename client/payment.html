@@ -227,8 +227,48 @@ span.price {
           }
   localStorage.setItem('delivery_price',delivery_price)
   localStorage.setItem('chosenDhabe7_price',chosenDhabe7_price)
-  localStorage.setItem('Garbet', document.getElementById("Garbet").checked)})
+  localStorage.setItem('Garbet', document.getElementById("Garbet").checked)
   
+arbiList= JSON.parse(localStorage.getItem("arbiList"));
+gharbiList= JSON.parse(localStorage.getItem("gharbiList"));
+ThibarList= JSON.parse(localStorage.getItem("ThibarList"));
+chosenAllouch=JSON.parse(localStorage.getItem("chosenAllouch"));
+chosenDhabe7=JSON.parse(localStorage.getItem("chosenDhabe7"));
+dhabe7List=JSON.parse(localStorage.getItem("dhabe7List"));
+
+
+
+for (var i=0;i<dhabe7List.length;i++){
+    if (chosenDhabe7.src===dhabe7List[i].src){
+      dhabe7List.splice(i,1);
+      localStorage.setItem("dhabe7List", JSON.stringify(dhabe7List));
+    }
+   }
+
+if (localStorage.page==="file:///C:/Users/Ines/Downloads/pair-project/client/arbi.html"){
+   for (var i=0;i<arbiList.length;i++){
+    if (chosenAllouch.src===arbiList[i].src){
+      arbiList.splice(i,1);
+      localStorage.setItem("arbiList", JSON.stringify(arbiList));
+    }
+   }}
+   else if (localStorage.page==="file:///C:/Users/Ines/Downloads/pair-project/client/gharbi.html"){
+    for (var i=0;i<gharbiList.length;i++){
+    if (chosenAllouch.src===gharbiList[i].src){
+      gharbiList.splice(i,1);
+      localStorage.setItem("gharbiList", JSON.stringify(gharbiList));
+    }
+   }
+  
+  // localStorage.clear()
+ } else if (localStorage.page==="file:///C:/Users/Ines/Downloads/pair-project/client/thibari.html"){
+    for (var i=0;i<ThibarList.length;i++){
+    if (chosenAllouch.src===ThibarList[i].src){
+      ThibarList.splice(i,1);
+      localStorage.setItem("ThibarList", JSON.stringify(ThibarList));
+    }
+   }
+ }})
 </script>
 
 
@@ -253,46 +293,5 @@ span.price {
 -->
 </div>
 
-<script type="text/javascript">
-arbiList= JSON.parse(localStorage.getItem("arbiList"));
-gharbiList= JSON.parse(localStorage.getItem("gharbiList"));
-ThibarList= JSON.parse(localStorage.getItem("ThibarList"));
-chosenAllouch=JSON.parse(localStorage.getItem("chosenAllouch"));
-chosenDhabe7=JSON.parse(localStorage.getItem("chosenDhabe7"));
-dhabe7List=JSON.parse(localStorage.getItem("dhabe7List"));
-
-
-for (var i=0;i<dhabe7List.length;i++){
-    if (chosenDhabe7.src===dhabe7List[i].src){
-      dhabe7List.splice(i,1);
-      localStorage.setItem("dhabe7List", JSON.stringify(dhabe7List));
-    }
-   }
-
-if (localStorage.page==="file:///C:/Users/Ines/Pictures/pair-project/client/arbi.html"){
-   for (var i=0;i<arbiList.length;i++){
-    if (chosenAllouch.src===arbiList[i].src){
-      arbiList.splice(i,1);
-      localStorage.setItem("arbiList", JSON.stringify(arbiList));
-    }
-   }}
-   else if (localStorage.page==="file:///C:/Users/Ines/Pictures/pair-project/client/gharbi.html"){
-    for (var i=0;i<gharbiList.length;i++){
-    if (chosenAllouch.src===gharbiList[i].src){
-      gharbiList.splice(i,1);
-      localStorage.setItem("gharbiList", JSON.stringify(gharbiList));
-    }
-   }
-  
-  // localStorage.clear()
- } else if (localStorage.page==="file:///C:/Users/Ines/Pictures/pair-project/client/thibari.html"){
-    for (var i=0;i<ThibarList.length;i++){
-    if (chosenAllouch.src===ThibarList[i].src){
-      ThibarList.splice(i,1);
-      localStorage.setItem("ThibarList", JSON.stringify(ThibarList));
-    }
-   }
- }
-</script>
   </body>
 </html>

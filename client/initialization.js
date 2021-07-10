@@ -2,7 +2,7 @@
 var arbiList=[
 {id: '3arbi01', src: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Brebis_Barbarine.JPG", breed: "3arbi", weight: 43, height: 90, price: 750, age: 7 },
 {id: '3arbi02', src: "https://www.researchgate.net/profile/Khaldi-Zahrane/publication/259417114/figure/fig2/AS:297250275250181@1447881396277/Belier-de-Race-Queue-Fine-de-l-Ouest_Q320.jpg", breed: "3arbi", weight: 47, height: 86, price: 710 , age: 7},
-{id: '3arbi03', src: "http://www.algerlablanche.com/public/algerie/races_ovines_algerie/barbarine.jpg", breed: "3arbi", weight: 46, height: 45, price: 690, age: 9 },
+{id: '3arbi03', src: "http://www.algerlablanche.com/public/algerie/races_ovines_algerie/barbarine.jpg", breed: "3arbi", weight: 46, height: 85, price: 690, age: 9 },
 {id: '3arbi04', src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Mouton-rouge-du-roussillon_SDA2013.JPG/1200px-Mouton-rouge-du-roussillon_SDA2013.JPG", breed: "3arbi", weight: 41, height: 98, price: 630, age: 8 }
 ]
 
