@@ -142,7 +142,7 @@ body {
 function existingThibars(){
   ThibarList=JSON.parse(localStorage.getItem("ThibarList"));
     for (i=0;i<ThibarList.length;i++){
-      $("#changediv").append("<a href=\"dhabe7.html\"> <div class=\"gallery\" id=\""+ThibarList[i].id+"\"> <img src=\""+ThibarList[i].src +"\" id=\""+ ThibarList[i].id+ "\" alt=\""+ThibarList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ ThibarList[i].breed +"\">"+ ThibarList[i].breed +"</h3> <p id=\"age\"  name=\""+ ThibarList[i].age+"\" >Age: "+ ThibarList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ ThibarList[i].weight+"\" > Weight: "+ ThibarList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ ThibarList[i].height+"\" > Height: "+ ThibarList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ ThibarList[i].price+"\" > Price: "+ ThibarList[i].price+ "dt </p> </div> </a>")
+      $("#changediv").append("<a href=\"thibari.html\"> <div class=\"gallery\" id=\""+ThibarList[i].id+"\"> <img src=\""+ThibarList[i].src +"\" id=\""+ ThibarList[i].id+ "\" alt=\""+ThibarList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ ThibarList[i].breed +"\">"+ ThibarList[i].breed +"</h3> <p id=\"age\"  name=\""+ ThibarList[i].age+"\" >Age: "+ ThibarList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ ThibarList[i].weight+"\" > Weight: "+ ThibarList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ ThibarList[i].height+"\" > Height: "+ ThibarList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ ThibarList[i].price+"\" > Price: "+ ThibarList[i].price+ "dt </p> </div> </a>")
     }
 }
 existingThibars()
@@ -163,6 +163,13 @@ $('.gallery').click(function(){
   localStorage.setItem('page', location.href)
 
   var chosenAllouch={id: ida, src: srca, breed: breeda, weight: weighta, height: heighta, price: pricea, age: agea }
+for (var i=0;i<ThibarList.length;i++){
+    if (chosenAllouch.src===ThibarList[i].src){
+      ThibarList.splice(i,1);
+      localStorage.setItem("ThibarList", JSON.stringify(ThibarList));
+    }
+   }
+  
  localStorage.setItem("chosenAllouch", JSON.stringify(chosenAllouch));
  $(this).remove();  
 })

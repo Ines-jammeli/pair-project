@@ -154,7 +154,7 @@ body {
 function existingDhabe7(){
   dhabe7List=JSON.parse(localStorage.getItem("dhabe7List"));
     for (i=0;i<dhabe7List.length;i++){
-      $("#changediv").append("<a href=\"payment.html\"> <div class=\"gallery\" id=\""+dhabe7List[i].id+"\"> <img src=\""+dhabe7List[i].src +"\" id=\""+ dhabe7List[i].id+ "\" alt=\""+dhabe7List[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ dhabe7List[i].name +"\">"+ dhabe7List[i].name +"</h3> <br /> <p id=\"location\" name=\""+ dhabe7List[i].location+"\" > Location: "+ dhabe7List[i].location+ " </p> <p id=\"price\" name=\""+ dhabe7List[i].price+"\" > Price: "+ dhabe7List[i].price+ "dt </p> </div> </a>")
+      $("#changediv").append("<a href=\"dhabe7.html\"> <div class=\"gallery\" id=\""+dhabe7List[i].id+"\"> <img src=\""+dhabe7List[i].src +"\" id=\""+ dhabe7List[i].id+ "\" alt=\""+dhabe7List[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ dhabe7List[i].name +"\">"+ dhabe7List[i].name +"</h3> <br /> <p id=\"location\" name=\""+ dhabe7List[i].location+"\" > Location: "+ dhabe7List[i].location+ " </p> <p id=\"price\" name=\""+ dhabe7List[i].price+"\" > Price: "+ dhabe7List[i].price+ "dt </p> </div> </a>")
     }
 }
 existingDhabe7()
@@ -173,6 +173,13 @@ $('.gallery').click(function(){
   var locationa=$('#'+ida+' > #location').attr('name');
 
   var chosenDhabe7={id: ida, src: srca, name: namea,  price: pricea, location: locationa }
+
+  for (var i=0;i<dhabe7List.length;i++){
+    if (chosenDhabe7.src===dhabe7List[i].src){
+      dhabe7List.splice(i,1);
+      localStorage.setItem("dhabe7List", JSON.stringify(dhabe7List));
+    }
+   }
  localStorage.setItem("chosenDhabe7", JSON.stringify(chosenDhabe7));
  $(this).remove();  
 })

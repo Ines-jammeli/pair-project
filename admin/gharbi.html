@@ -142,7 +142,7 @@ body {
 function existingGharbi(){
   gharbiList=JSON.parse(localStorage.getItem("gharbiList"));
     for (i=0;i<gharbiList.length;i++){
-      $("#changediv").append("<a href=\"dhabe7.html\"> <div class=\"gallery\" id=\""+gharbiList[i].id+"\"> <img src=\""+gharbiList[i].src +"\" id=\""+ gharbiList[i].id+ "\" alt=\""+gharbiList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ gharbiList[i].breed +"\">"+ gharbiList[i].breed +"</h3> <p id=\"age\"  name=\""+ gharbiList[i].age+"\" >Age: "+ gharbiList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ gharbiList[i].weight+"\" >Weight: "+ gharbiList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ gharbiList[i].height+"\" > Height: "+ gharbiList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ gharbiList[i].price+"\"  >Price: "+ gharbiList[i].price+ "dt </p> </div> </a>")
+      $("#changediv").append("<a href=\"gharbi.html\"> <div class=\"gallery\" id=\""+gharbiList[i].id+"\"> <img src=\""+gharbiList[i].src +"\" id=\""+ gharbiList[i].id+ "\" alt=\""+gharbiList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ gharbiList[i].breed +"\">"+ gharbiList[i].breed +"</h3> <p id=\"age\"  name=\""+ gharbiList[i].age+"\" >Age: "+ gharbiList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ gharbiList[i].weight+"\" >Weight: "+ gharbiList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ gharbiList[i].height+"\" > Height: "+ gharbiList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ gharbiList[i].price+"\"  >Price: "+ gharbiList[i].price+ "dt </p> </div> </a>")
     }
 }
 existingGharbi()
@@ -163,6 +163,13 @@ $('.gallery').click(function(){
   localStorage.setItem('page', location.href)
 
   var chosenAllouch={id: ida, src: srca, breed: breeda, weight: weighta, height: heighta, price: pricea, age: agea }
+for (var i=0;i<gharbiList.length;i++){
+    if (chosenAllouch.src===gharbiList[i].src){
+      gharbiList.splice(i,1);
+      localStorage.setItem("gharbiList", JSON.stringify(gharbiList));
+    }
+   }
+  
  localStorage.setItem("chosenAllouch", JSON.stringify(chosenAllouch));
  $(this).remove();  
 })

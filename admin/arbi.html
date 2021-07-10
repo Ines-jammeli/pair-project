@@ -85,21 +85,6 @@ body {
 </head>
 <body>
 
-<div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </div>
-  </div> 
-</div>
-
  <link rel="stylesheet" href="allouch.css">
 
 </head>
@@ -144,7 +129,7 @@ body {
 </header>
 
 
-<h1> Allouch l aid b arfa9 laswem </h1>
+<h1> Remove a Allouch by clicking on its image </h1>
 
 
 </div>
@@ -154,7 +139,7 @@ body {
 function existingArbi(){
   arbiList=JSON.parse(localStorage.getItem("arbiList"));
     for (i=0;i<arbiList.length;i++){
-      $("#changediv").append("<a href=\"dhabe7.html\"> <div class=\"gallery\" id=\""+arbiList[i].id+"\"> <img src=\""+arbiList[i].src +"\" id=\""+ arbiList[i].id+ "\" alt=\""+arbiList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ arbiList[i].breed +"\">"+ arbiList[i].breed +"</h3> <p id=\"age\"  name=\""+ arbiList[i].age+"\" >"+ arbiList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ arbiList[i].weight+"\" >"+ arbiList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ arbiList[i].height+"\" >"+ arbiList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ arbiList[i].price+"\" >"+ arbiList[i].price+ "dt </p> </div> </a>")
+      $("#changediv").append("<a href=\"arbi.html\"> <div class=\"gallery\" id=\""+arbiList[i].id+"\"> <img src=\""+arbiList[i].src +"\" id=\""+ arbiList[i].id+ "\" alt=\""+arbiList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ arbiList[i].breed +"\">"+ arbiList[i].breed +"</h3> <p id=\"age\"  name=\""+ arbiList[i].age+"\" >"+ arbiList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ arbiList[i].weight+"\" >"+ arbiList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ arbiList[i].height+"\" >"+ arbiList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ arbiList[i].price+"\" >"+ arbiList[i].price+ "dt </p> </div> </a>")
     }
 }
 existingArbi()
@@ -175,6 +160,13 @@ $('.gallery').click(function(){
   localStorage.setItem('page', location.href)
 
   var chosenAllouch={id: ida, src: srca, breed: breeda, weight: weighta, height: heighta, price: pricea, age: agea }
+
+for (var i=0;i<arbiList.length;i++){
+    if (chosenAllouch.src===arbiList[i].src){
+      arbiList.splice(i,1);
+      localStorage.setItem("arbiList", JSON.stringify(arbiList));
+    }}
+
  localStorage.setItem("chosenAllouch", JSON.stringify(chosenAllouch));
  $(this).remove();  
 })
