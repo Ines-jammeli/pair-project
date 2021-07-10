@@ -301,8 +301,8 @@ body {
     <label for="text"><b>Allouch's image source</b></label> 
     <input type="text" placeholder="Enter the source of the image" name="src" id="src" required>  <br /> 
 
-    <label for="text"><b>Allouch's Price</b></label>
-    <input type="text"  placeholder="Enter the Allouch's price" name="price" id="price" required>  <br /> 
+    <label for="text"><b>Allouch's Price &nbsp</b></label>
+    <input type="number"  placeholder="Enter the Allouch's price" name="price" id="price" required>  <br /> <br /> 
 
     <label for="text"><b>Allouch's Weight</b></label>
     <input type="number" placeholder="Enter the Allouch's weight in kg" name="weight" id="weight" required>  <br /> <br /> 
@@ -317,13 +317,54 @@ body {
     <label for="text"><b> Allouch's Breed </b></label>
     <select id="breed" name="breed">
       <option value="3arbi">3arbi</option>
-      <option value="gharbi">Gharbi</option>
+      <option value="Gharbi">Gharbi</option>
       <option value="Thibari">Thibari</option>
     </select> <br />  <br /> 
 
     <hr>
-
+    <a href="add_allouch.html">
     <button type="submit" class="registerbtn" id="add">Add me</button>
+    </a>
+
+  <script type="text/javascript">
+    arbiList=JSON.parse(localStorage.getItem("arbiList"));
+    gharbiList=JSON.parse(localStorage.getItem("gharbiList"));
+    ThibarList=JSON.parse(localStorage.getItem("ThibarList"));
+
+  $('#add').click(function(){
+    var breed=document.getElementById('breed').value;
+    if (breed==='3arbi'){
+      var newId=arbiList.length;
+    }
+    else if (breed==='Gharbi'){
+      var newId=gharbiList.length;
+    } else if (breed==='Thibari'){
+      var newId=ThibarList.length;
+    }
+    var addAllouch={id: document.getElementById('breed').value+newId, src: document.getElementById('src').value, breed: document.getElementById('breed').value, weight: document.getElementById('weight').value, height: document.getElementById('height').value, price: document.getElementById('price').value, age: document.getElementById('age').value }
+
+    if (breed==='3arbi'){
+      arbiList.push(addAllouch)
+    }
+    else if (breed==='Gharbi'){
+      gharbiList.push(addAllouch)
+    } else if (breed==='Thibari'){
+      ThibarList.push(addAllouch)
+    }
+
+    localStorage.setItem("arbiList", JSON.stringify(arbiList))
+    localStorage.setItem("gharbiList", JSON.stringify(gharbiList))
+    localStorage.setItem("ThibarList", JSON.stringify(ThibarList))
+  localStorage.setItem("addAllouch", JSON.stringify(addAllouch))})
+  
+</script>
+
+
+
+
+
+
+
   </div>
 
 </form>
