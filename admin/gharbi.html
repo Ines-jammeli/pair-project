@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title> Jibouli Allouchi </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="allouch.css">
+
+    <link rel="shortcut icon" type="image/x-icon" href="shaun.ico">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+
+ <link rel="stylesheet" href="allouch.css">
+
+</head>
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+
+    <a href="#home" class="w3-bar-item w3-button"> Jibuli Alluchi </a>
+
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small" id='topheader'>
+      <a href="client.html" class="w3-bar-item w3-button">  Welcome </a>
+     <!-- <a href="alelech.html" class="w3-bar-item w3-button"> Nechri Allouchi </a> -->
+      <div class="dropdown">
+    <button class="dropbtn">Nechri Allouchi 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="arbi.html"> 3arbi </a>
+      <a href="gharbi.html"> Gharbi </a>
+      <a href="thibari.html"> Thibari</a>
+    </div>
+  </div> 
+
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="https://image.freepik.com/vecteurs-libre/eid-al-adha-mubarak-moutons_1302-6209.jpg" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+  </div>
+</header>
+
+
+<h1> Allouch l aid b arfa9 laswem </h1>
+
+
+
+</div>
+
+<dir class="change" id="changediv">
+<script type="text/javascript">
+function existingGharbi(){
+  gharbiList=JSON.parse(localStorage.getItem("gharbiList"));
+    for (i=0;i<gharbiList.length;i++){
+      $("#changediv").append("<a href=\"dhabe7.html\"> <div class=\"gallery\" id=\""+gharbiList[i].id+"\"> <img src=\""+gharbiList[i].src +"\" id=\""+ gharbiList[i].id+ "\" alt=\""+gharbiList[i].id+ "\" width=\"400\" height=\"300\"> <h3 name=\""+ gharbiList[i].breed +"\">"+ gharbiList[i].breed +"</h3> <p id=\"age\"  name=\""+ gharbiList[i].age+"\" >Age: "+ gharbiList[i].age+ " months old </p> <br /> <p id=\"weight\" name=\""+ gharbiList[i].weight+"\" >Weight: "+ gharbiList[i].weight+ "kg </p> <br /> <p id=\"height\" name=\""+ gharbiList[i].height+"\" > Height: "+ gharbiList[i].height+ "cm </p> <br /> <p id=\"price\" name=\""+ gharbiList[i].price+"\"  >Price: "+ gharbiList[i].price+ "dt </p> </div> </a>")
+    }
+}
+existingGharbi()
+</script> 
+
+  </dir>
+
+
+<script type="text/javascript">
+$('.gallery').click(function(){
+  var ida=$(this).attr("id")
+  var srca=$('#'+ida+' > img').attr('src');
+  var breeda=$('#'+ida+'  > h3').attr('name');
+  var weighta=$('#'+ida+' > #weight').attr('name');
+  var heighta=$('#'+ida+' > #height').attr('name');
+  var pricea=$('#'+ida+' > #price').attr('name');
+  var agea=$('#'+ida+' > #age').attr('name');
+  localStorage.setItem('page', location.href)
+
+  var chosenAllouch={id: ida, src: srca, breed: breeda, weight: weighta, height: heighta, price: pricea, age: agea }
+ localStorage.setItem("chosenAllouch", JSON.stringify(chosenAllouch));
+ $(this).remove();  
+})
+</script>
+
+
+
+  </body>
+

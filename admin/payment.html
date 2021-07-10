@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="shortcut icon" type="image/x-icon" href="shaun.ico">
+
+<script src="https://code.jquery.com/jquery-3.6.0.js" 
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<style>
+body {
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -16px;
+}
+
+.col-25 {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+}
+
+.col-50 {
+  -ms-flex: 50%; /* IE10 */
+  flex: 50%;
+}
+
+.col-75 {
+  -ms-flex: 75%; /* IE10 */
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container  , .container1{
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: #2196F3;
+}
+
+hr {
+  border: 1px solid lightgrey;
+}
+
+span.price {
+  float: right;
+  color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+  .col-25 {
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+   var chosenAllouch=JSON.parse(localStorage.getItem("chosenAllouch"));
+   
+</script>
+
+
+<h2>Fatourti</h2>
+
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form action="/action_page.php">
+      
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Foulen Ben Foulen">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="FoulenBenFoulen@example.com">
+            <label for="Tel"><i class="fa fa-address-card-o"></i> Tel</label>
+            <input type="Tel" id="adr" name="address" placeholder="00 000 000"> <br /> <br /> <br />
+
+            <div class="row">
+              <div class="col-50">
+              <label for="browser">Rahba Delivery </label>
+               <input list="browsers" name="browser" id="rahba">
+                   <datalist id="browsers">
+                    <option value="Tunis">
+                    <option value="Ariana">
+                    <option value="Nabeul">
+                    <option value="Sousse">
+                    <option value="Monastir">
+                    <option value="Sidi Bouzid">
+                    <option value="Kairouan">
+                    <option value="Tozeur">
+                    <option value="Kebili">
+                    <option value="Sfax">
+                    <option value="Ben Arous">
+                    <option value="Beja">
+                    <option value="Bizerte">
+                    <option value="Gabes">
+                    <option value="Gafsa">
+                    <option value="Jandouba">
+                    <option value="Kasserine">
+                    <option value="Kef">
+                    <option value="Mahdia">
+                    <option value="Manouba">
+                    <option value="Medenine">
+                    <option value="Siliana">
+                    <option value="Tataouine">
+                    <option value="Zaghouane">
+                </datalist>
+              </div>
+              <div class="col-50">
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="Foulen Ben Foulen">
+            <label for="ccnum">Credit card number</label>
+            <input type="number" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="September">
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="number" id="expyear" name="expyear" placeholder="2021">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="number" id="cvv" name="cvv" placeholder="000">
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <label>
+          <input type="checkbox"  name="sameadr" id="Garbet"> Garbet me
+        </label>
+        <label>
+          <input type="checkbox"  name="sameadr" id="approved"> Read and approved
+        </label>
+
+        <a  class=" btn"  href="surprise.html" type="submit" id="checkout">   Continue to checkout  
+      </a>
+      </form>
+    </div>
+  </div>
+<script type="text/javascript">
+  var chosenDhabe7_price=0
+  $('#checkout').click(function(){
+    var deliveryObj={"Tunis": 10, "Ariana": 10, "Nabeul": 20, "Sousse": 30, "Monastir": 30, "Sidi Bouzid": 40, "Kairouan": 40, "Sfax": 40,"Ben Arous": 10, "Beja": 20, "Zaghouane":20, "Tataouine": 50, "Kasserine": 50, "Medenine": 50, "Kebili":60, "Tozeur":60, "Bizerte":20, "Gabes":50, "Gafsa":40, "Jandouba":20, "Kef":20 , "Mahdia":30, "Manouba":10, "Siliana":40}
+
+          for (key in deliveryObj){
+            if (document.getElementById('rahba').value===key){
+              delivery_price=deliveryObj[key]
+            }
+          }
+  localStorage.setItem('delivery_price',delivery_price)
+  localStorage.setItem('chosenDhabe7_price',chosenDhabe7_price)
+  localStorage.setItem('Garbet', document.getElementById("Garbet").checked)})
+  
+</script>
+
+
+  <!--
+  <div class="col-25">
+    <div class="container1">
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
+      <script type="text/javascript">
+      $(".container1").append("<p><a>3allouch Price</a> <span class=\"price\"> "+chosenAllouch.price +' TND </span></p>') 
+     if (!$("#Garbet").is('checked')){
+      $(".container1").append("<p><a>Garbet me fees</a> <span class= \"price\"> 20 TND </span></p>")}
+      else {
+        $(".container1").append("<p><a>Garbet me fees</a> <span class= \"price\"> 0 TND </span></p>")
+      } 
+      </script>
+      <p><a>Delivery Price</a> <span class="price">$8</span></p>
+      <p><a>Dhabe7 price</a> <span class="price">$2</span></p>
+      <hr>
+      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+    </div>
+  </div>
+-->
+</div>
+
+<script type="text/javascript">
+arbiList= JSON.parse(localStorage.getItem("arbiList"));
+gharbiList= JSON.parse(localStorage.getItem("gharbiList"));
+ThibarList= JSON.parse(localStorage.getItem("ThibarList"));
+chosenAllouch=JSON.parse(localStorage.getItem("chosenAllouch"));
+chosenDhabe7=JSON.parse(localStorage.getItem("chosenDhabe7"));
+dhabe7List=JSON.parse(localStorage.getItem("dhabe7List"));
+
+
+for (var i=0;i<dhabe7List.length;i++){
+    if (chosenDhabe7.src===dhabe7List[i].src){
+      dhabe7List.splice(i,1);
+      localStorage.setItem("dhabe7List", JSON.stringify(dhabe7List));
+    }
+   }
+
+if (localStorage.page==="file:///C:/Users/Ines/Pictures/pair-project/client/arbi.html"){
+   for (var i=0;i<arbiList.length;i++){
+    if (chosenAllouch.src===arbiList[i].src){
+      arbiList.splice(i,1);
+      localStorage.setItem("arbiList", JSON.stringify(arbiList));
+    }
+   }}
+   else if (localStorage.page==="file:///C:/Users/Ines/Pictures/pair-project/client/gharbi.html"){
+    for (var i=0;i<gharbiList.length;i++){
+    if (chosenAllouch.src===gharbiList[i].src){
+      gharbiList.splice(i,1);
+      localStorage.setItem("gharbiList", JSON.stringify(gharbiList));
+    }
+   }
+  
+  // localStorage.clear()
+ } else if (localStorage.page==="file:///C:/Users/Ines/Pictures/pair-project/client/thibari.html"){
+    for (var i=0;i<ThibarList.length;i++){
+    if (chosenAllouch.src===ThibarList[i].src){
+      ThibarList.splice(i,1);
+      localStorage.setItem("ThibarList", JSON.stringify(ThibarList));
+    }
+   }
+ }
+</script>
+  </body>
+</html>
