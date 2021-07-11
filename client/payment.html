@@ -103,7 +103,7 @@ span.price {
   color: grey;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+
 @media (max-width: 800px) {
   .row {
     flex-direction: column-reverse;
@@ -136,7 +136,7 @@ span.price {
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="FoulenBenFoulen@example.com">
             <label for="Tel"><i class="fa fa-address-card-o"></i> Tel</label>
-            <input type="Tel" id="adr" name="address" placeholder="00 000 000"> <br /> <br /> <br />
+            <input type="Tel" id="Tel" name="address" placeholder="00 000 000"> <br /> <br /> <br />
 
             <div class="row">
               <div class="col-50">
@@ -223,6 +223,11 @@ span.price {
               delivery_price=deliveryObj[key]
             }
           }
+
+  localStorage.setItem('fullName', document.getElementById('fname').value)
+  localStorage.setItem('email', document.getElementById('email').value)
+  localStorage.setItem('rahba', document.getElementById('rahba').value)
+  localStorage.setItem('Tel', document.getElementById('Tel').value)
   localStorage.setItem('delivery_price',delivery_price)
   localStorage.setItem('chosenDhabe7_price',chosenDhabe7_price)
   localStorage.setItem('Garbet', document.getElementById("Garbet").checked)
@@ -270,25 +275,6 @@ if (localStorage.page==="file:///C:/Users/Ines/Downloads/pair-project/client/arb
 </script>
 
 
-  <!--
-  <div class="col-25">
-    <div class="container1">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <script type="text/javascript">
-      $(".container1").append("<p><a>3allouch Price</a> <span class=\"price\"> "+chosenAllouch.price +' TND </span></p>') 
-     if (!$("#Garbet").is('checked')){
-      $(".container1").append("<p><a>Garbet me fees</a> <span class= \"price\"> 20 TND </span></p>")}
-      else {
-        $(".container1").append("<p><a>Garbet me fees</a> <span class= \"price\"> 0 TND </span></p>")
-      } 
-      </script>
-      <p><a>Delivery Price</a> <span class="price">$8</span></p>
-      <p><a>Dhabe7 price</a> <span class="price">$2</span></p>
-      <hr>
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
-    </div>
-  </div>
--->
 </div>
 
   </body>

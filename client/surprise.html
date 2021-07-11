@@ -128,6 +128,13 @@ body {
   chosenAllouch=JSON.parse(localStorage.getItem("chosenAllouch"));
   chosenDhabe7_price=JSON.parse(localStorage.getItem("chosenDhabe7")).price;
   delivery_price=JSON.parse(localStorage.getItem("delivery_price"));
+  today = new Date();
+  delivery_time=new Date(today.getTime() + 23*60*60*1000);
+  delivery_time=delivery_time.toString().slice(0,-40)+'Tunisian Time'
+  tel=localStorage.getItem("Tel")
+  name=localStorage.getItem("fullName")
+  rahba=localStorage.getItem('rahba')
+  email=localStorage.getItem('email')
 </script>
 
 
@@ -148,13 +155,23 @@ body {
         var garbetPrice=0;
       } 
       $(".container1").append("<p><a>Garbet me fees</a> <span class= \"price\"> "+ garbetPrice+" TND </span></p>")
-      $(".container1").append("<p><a>Delivery Price</a> <span class=\"price\">"+ delivery_price +"</span></p>")
-      $(".container1").append("<p><a>Dhabe7 price</a> <span class=\"price\">" + chosenDhabe7_price + "</span></p>")
+      $(".container1").append("<p><a>Delivery Price</a> <span class=\"price\">"+ delivery_price +" TND </span></p>")
+      $(".container1").append("<p><a>Dhabe7 price</a> <span class=\"price\">" + chosenDhabe7_price + " TND</span></p>")
       </script>
       <hr>
       <script type="text/javascript">
       $(".container1").append("<p>Total <span class=\"price\" style=\"color:black\"><b>"+(parseInt(chosenAllouch.price) + parseInt(chosenDhabe7_price)+ parseInt(garbetPrice) + parseInt(delivery_price))+ "TND </b></span></p>")
       </script>
+
+      <div>
+        <script type="text/javascript">
+        $(".container1").append('<h4> Nchallah 3idek Mabrouk <strong>'+ name+ '</strong> </h4>')
+        $(".container1").append('<p> We will contact you asap on your Tel number: <b>'+ tel+ '</b> and your email address: <b>'+ email+'</b> and see you with your new Allouch at: <b>' +rahba+'</b> </p>')
+
+        $(".container1").append('<p> Your Estimated Delivery Time: <b>'+ delivery_time+'</b> </p>')
+        $(".container1").append('<p>Thank you for shopping with us @Jibouli_Allouchi! #ched_Darek</p>')
+          </script>
+      </div>
     </div>
   </div>
 </div>
