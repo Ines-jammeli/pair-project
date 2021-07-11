@@ -10,7 +10,7 @@
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <style>
 body {
-  font-family: Arial;
+  font-family: Georgia,  serif;
   font-size: 17px;
   padding: 8px;
 }
@@ -49,7 +49,7 @@ body {
 }
 
 .container  , .container1{
-  background-color: #f2f2f2;
+  background-color: #ecf3f5;
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 3px;
@@ -75,7 +75,7 @@ label {
 }
 
 .btn {
-  background-color: #04AA6D;
+  background-color: #165757 ;
   color: white;
   padding: 12px;
   margin: 10px 0;
@@ -87,15 +87,15 @@ label {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: #25accc;
 }
 
 a {
-  color: #2196F3;
+  color: #e0b864 ;
 }
 
 hr {
-  border: 1px solid lightgrey;
+  border: 1px solid #f4ca95;
 }
 
 span.price {
@@ -205,10 +205,8 @@ span.price {
         </div>
         <label>
           <input type="checkbox"  name="sameadr" id="Garbet"> Garbet me
-        </label>
-        <label>
-          <input type="checkbox"  name="sameadr" id="approved"> Read and approved
-        </label>
+        </label> <br />
+
 
         <a  class=" btn"  href="surprise.html" type="submit" id="checkout">   Continue to checkout  
       </a>
@@ -237,13 +235,13 @@ chosenDhabe7=JSON.parse(localStorage.getItem("chosenDhabe7"));
 dhabe7List=JSON.parse(localStorage.getItem("dhabe7List"));
 
 
-
+if (chosenDhabe7.src!=="3andi_dhabe7.png"){
 for (var i=0;i<dhabe7List.length;i++){
     if (chosenDhabe7.src===dhabe7List[i].src){
       dhabe7List.splice(i,1);
       localStorage.setItem("dhabe7List", JSON.stringify(dhabe7List));
     }
-   }
+   }}
 
 if (localStorage.page==="file:///C:/Users/Ines/Downloads/pair-project/client/arbi.html"){
    for (var i=0;i<arbiList.length;i++){
