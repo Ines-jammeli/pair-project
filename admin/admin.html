@@ -26,7 +26,7 @@ Button show the total price (verification message/total price)
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
 }
 
 .navbar {
@@ -53,7 +53,7 @@ body {
   border: none;
   outline: none;
   color: rgb(80,80,80);
-  font-family: "Times New Roman", Georgia, Serif;
+  font-family: Georgia, Serif;
   padding: 9px 5px;
   background-color: inherit;
   font-family: inherit;
@@ -83,7 +83,7 @@ body {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #16deec;
 }
 
 .dropdown:hover .dropdown-content {
@@ -94,7 +94,7 @@ body {
 
 
 .button {
-  background-color: #4CAF50; /* Green */
+  background-color:  #9a532b;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -112,13 +112,20 @@ body {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 160%;
+  left: 27%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 </style>
+ <link rel="stylesheet" href="allouch.css">
 </head>
-<body>
 
-
-
-</head>
 
 <body id="body1">
 
@@ -129,19 +136,19 @@ body {
 </script>
 
 
-
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
 
-    <a class="w3-bar-item w3-button"> Jibuli Alluchi </a>
+    <a class="w3-bar-item w3-button"> Jibouli Allouchi </a>
 
     <!-- Right-sided navbar links. Hide them on small screens -->
     <div class="w3-right w3-hide-small" id='topheader'>
       <a href="admin.html" class="w3-bar-item w3-button">  Add </a>
+       <a href="dhabe7.html" class="w3-bar-item w3-button">  Dhabe7a </a>
      <!-- <a href="alelech.html" class="w3-bar-item w3-button"> Nechri Allouchi </a> -->
       <div class="dropdown">
-    <button class="dropbtn" >Existing Alelech 
+    <button class="dropbtn" > Alelech 
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
@@ -149,14 +156,11 @@ body {
       <a href="gharbi.html"> Gharbi </a>
       <a href="thibari.html"> Thibari</a>
     </div>
-    <div class="w3-right w3-hide-small" id='topheader'>
-      <a href="dhabe7.html" class="w3-bar-item w3-button">  Existing Dhabe7a </a>
-  </div>
   </div> 
+</div>
  
     </div>
   </div>
-</div>
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
@@ -172,10 +176,10 @@ body {
 
 
 
-
+<div class="center">
 <a href="add_allouch.html"><button class="button button2">Add Allouch</button></a>
 <a href="add_dhabe7.html"><button class="button button2">Add Dhabe7</button></a>
-
+</div>
 
 
   <!-- Contact Section -->
@@ -193,7 +197,7 @@ body {
 
 
 <!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-32">
+<footer class="w3-center w3-white w3-padding-32">
   <p> Jibouli Alluchi 2021 </p>
 </footer>
 
